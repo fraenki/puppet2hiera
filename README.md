@@ -37,7 +37,7 @@ class { 'test_module':
 }
 EOF
 
-./puppet2hiera.py /tmp/puppet_code 
+python3 puppet2hiera.py /tmp/puppet_code
 test_module::ensure: 'present'
 test_module::manage_stuff: true
 test_module::config:
@@ -53,5 +53,5 @@ And a real-world example that demonstrates one of the main use-cases:
 ```shell
 puppet resource user > /tmp/puppet_users
 
-./puppet2hiera.py /tmp/puppet_users
+python3 puppet2hiera.py /tmp/puppet_users
 ```
